@@ -18,3 +18,13 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+
+tasks.withType<Jar> {
+        manifest {
+                attributes["Main-Class"] = "xyz.devmeko.TuringMachine.Main"
+        }
+}
+
+application {
+        mainClass.set("xyz.devmeko.TuringMachine.Main")
+}
