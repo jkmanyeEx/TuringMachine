@@ -41,7 +41,7 @@ public class Machine {
     public String run() throws Exception {
         while (! state.equalsIgnoreCase("qf")) {
             Action curAction = actionList.stream()
-                   .filter(action -> action.getFirstState().equalsIgnoreCase(state) && action.getFindChar().equals(tape[headPos]))
+                    .filter(action -> action.getFirstState().equalsIgnoreCase(state) && action.getFindChar().equals(tape[headPos]))
                     .findFirst()
                     .orElseThrow(() -> new Exception("No such action found for: (" + state + ", " + tape[headPos] + ") !"));
 
